@@ -19,6 +19,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ElectrodomesticosListActivity"
+            android:label="@string/title_electrodomesticos_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ElectrodomesticosDetailActivity"
+            android:label="@string/title_electrodomesticos_detail"
+            android:parentActivityName=".ElectrodomesticosListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectrodomesticosListActivity" />
+        </activity>
     </application>
 
 </manifest>
