@@ -3,40 +3,14 @@
 
     <!-- Electrodomestic list (For Dev. Will turn into SQL DB)-->
     <string-array name="nombre_electrodomesticos">
-        <item>Licuadora</item>
-        <item>Computadora</item>
-        <item>Refrigerador</item>
-        <item>Licuadora</item>
-        <item>Computadora</item>
-        <item>Refrigerador</item>
-        <item>Licuadora</item>
-        <item>Computadora</item>
-        <item>Refrigerador</item>
-        <item>Licuadora</item>
-        <item>Computadora</item>
-        <item>Refrigerador</item>
-        <item>Licuadora</item>
-        <item>Computadora</item>
-        <item>Refrigerador</item>
-        <item>Licuadora</item>
-        <item>Computadora</item>
-        <item>Refrigerador</item>
-        <item>Licuadora</item>
-        <item>Computadora</item>
-        <item>Refrigerador</item>
-        <item>Licuadora</item>
-        <item>Computadora</item>
-        <item>Refrigerador</item>
+        <item>Lista de Electrodomesticos</item>
+        <item>Agregar Electrodomestico</item>
     </string-array>
 
     <!-- Event list (For Dev. Will turn into SQL DB) -->
     <string-array name="nombre_eventos">
-        <item>Evento 1</item>
-        <item>Evento 2</item>
-        <item>Evento 3</item>
+        <item>Lista de Eventos</item>
+        <item>Agregar Evento</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
