@@ -1,4 +1,4 @@
-package itesm.mx.a01191342_examenvinculacion_ahorroenergia;
+package itesm.mx.savedenergy;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

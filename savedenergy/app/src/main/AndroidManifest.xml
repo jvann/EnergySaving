@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="itesm.mx.a01191342_examenvinculacion_ahorroenergia">
+    package="itesm.mx.savedenergy">
 
     <application
         android:allowBackup="true"

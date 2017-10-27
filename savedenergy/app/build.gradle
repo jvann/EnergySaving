@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "itesm.mx.a01191342_examenvinculacion_ahorroenergia"
+        applicationId "itesm.mx.savedenergy"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1

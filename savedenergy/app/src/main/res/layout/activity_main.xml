@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/fragment_electrodomesticos"
-        class="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectrodomesticsFragment"
+        class="itesm.mx.savedenergy.ElectrodomesticsFragment"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_weight="1" />
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/fragment_eventos"
-        class="itesm.mx.a01191342_examenvinculacion_ahorroenergia.EventsFragment"
+        class="itesm.mx.savedenergy.EventsFragment"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_weight="1" />

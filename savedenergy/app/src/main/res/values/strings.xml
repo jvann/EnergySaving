@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">A01191342_EXAMENVINCULACION_AHORROENERGIA</string>
+    <string name="app_name">savedenergy</string>
 
     <!-- Electrodomestic list (For Dev. Will turn into SQL DB)-->
     <string-array name="nombre_electrodomesticos">

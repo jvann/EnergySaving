@@ -1,4 +1,4 @@
-package itesm.mx.a01191342_examenvinculacion_ahorroenergia;
+package itesm.mx.savedenergy;
 
 
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
