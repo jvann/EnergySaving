@@ -17,7 +17,7 @@ import android.widget.TextView;
  */
 public class EventsFragment extends ListFragment {
 
-    private static final String DEBUG_TAG = "TAG_FRAG_ELECTROS";
+    private static final String DEBUG_TAG = "TAG_FRAG_EVENTOS";
 
     public EventsFragment() {
         // Required empty public constructor

@@ -9,16 +9,16 @@
 
     <fragment
         android:id="@+id/fragment_electrodomesticos"
+        class="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectrodomesticsFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        class="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectrodomesticsFragment" />
+        android:layout_height="100dp"
+        android:layout_weight="1" />
 
     <fragment
         android:id="@+id/fragment_eventos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_height="100dp"
+        android:layout_weight="1"
         class="itesm.mx.a01191342_examenvinculacion_ahorroenergia.EventsFragment" />
 
 </LinearLayout>
