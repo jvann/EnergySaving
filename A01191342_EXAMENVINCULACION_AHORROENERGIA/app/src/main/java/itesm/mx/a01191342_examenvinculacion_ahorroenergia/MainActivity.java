@@ -124,13 +124,10 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d(DEBUG_TAG, "onCreateView() has been created.");
 
-            View rootView;
-            TextView textView;
-
             switch (getArguments().getInt(ARG_SECTION_NUMBER))
             {
                 case 1:
-                    ElectrosFragment electrosFrag  = ElectrosFragment.newInstance("Hellow", "World");
+                    ElectrosFragment electrosFrag  = ElectrosFragment.newInstance();
                     inflater.inflate(R.layout.fragment_electros, container, false);
                     return electrosFrag.onCreateView(inflater, container, savedInstanceState);
                 case 2:
