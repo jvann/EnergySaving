@@ -15,4 +15,13 @@
         <item>Agregar Evento</item>
     </string-array>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="dummy_event_fragment">Hello blank fragment EVENTOS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="dummy_electros_fragment">Hello blank fragment ELECTRODOMESTICS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="dummy_report_fragment">Hello blank fragment REPORT</string>
+
 </resources>
