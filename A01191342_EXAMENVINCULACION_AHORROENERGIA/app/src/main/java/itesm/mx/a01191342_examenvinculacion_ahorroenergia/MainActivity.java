@@ -130,14 +130,17 @@ public class MainActivity extends AppCompatActivity {
             switch (getArguments().getInt(ARG_SECTION_NUMBER))
             {
                 case 1:
-                    rootView = inflater.inflate(R.layout.fragment_electros, container, false);
-                    return rootView;
+                    ElectrosFragment electrosFrag  = ElectrosFragment.newInstance("Hellow", "World");
+                    inflater.inflate(R.layout.fragment_electros, container, false);
+                    return electrosFrag.onCreateView(inflater, container, savedInstanceState);
                 case 2:
-                    rootView = inflater.inflate(R.layout.fragment_events, container, false);
-                    return rootView;
+                    EventsFragment eventsFrag  = EventsFragment.newInstance("Hellow", "World");
+                    inflater.inflate(R.layout.fragment_electros, container, false);
+                    return eventsFrag.onCreateView(inflater, container, savedInstanceState);
                 case 3:
-                    rootView = inflater.inflate(R.layout.fragment_report, container, false);
-                    return rootView;
+                    ReportFragment reportFrag  = ReportFragment.newInstance("Hellow", "World");
+                    inflater.inflate(R.layout.fragment_electros, container, false);
+                    return reportFrag.onCreateView(inflater, container, savedInstanceState);
                 default:
                     return null;
             }
