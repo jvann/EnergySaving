@@ -109,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
          * number.
          */
         public static PlaceholderFragment newInstance(int sectionNumber) {
+            Log.d(DEBUG_TAG, "newInstance() has been created.");
+
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
@@ -122,11 +124,23 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d(DEBUG_TAG, "onCreateView() has been created.");
 
+            View rootView;
+            TextView textView;
 
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-//            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-//            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
+            switch (getArguments().getInt(ARG_SECTION_NUMBER))
+            {
+                case 1:
+                    rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                    return rootView;
+                case 2:
+                    rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                    return rootView;
+                case 3:
+                    rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                    return rootView;
+                default:
+                    return null;
+            }
         }
     }
 
@@ -142,6 +156,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
+
+            Log.d(DEBUG_TAG, "getItem() has been created. : " + position);
+
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             return PlaceholderFragment.newInstance(position + 1);
@@ -150,11 +167,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
+            Log.d(DEBUG_TAG, "getCount() has been created.");
             return 3;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
+            Log.d(DEBUG_TAG, "getPageTitle() has been created. : " + position);
             switch (position) {
                 case 0:
                     return "Electro-\ndomesticos";

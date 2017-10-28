@@ -1,7 +1,18 @@
 <resources>
     <string name="app_name">A01191342_EXAMENVINCULACION_AHORROENERGIA</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Menu</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_electrodomesticos_list">Items</string>
-    <string name="title_electrodomesticos_detail">Electrodomesticos Detail</string>
+
+    <!-- Electrodomestic list (For Dev. Will turn into SQL DB)-->
+    <string-array name="nombre_electrodomesticos">
+        <item>Lista de Electrodomesticos</item>
+        <item>Agregar Electrodomestico</item>
+    </string-array>
+
+    <!-- Event list (For Dev. Will turn into SQL DB) -->
+    <string-array name="nombre_eventos">
+        <item>Lista de Eventos</item>
+        <item>Agregar Evento</item>
+    </string-array>
+
 </resources>
