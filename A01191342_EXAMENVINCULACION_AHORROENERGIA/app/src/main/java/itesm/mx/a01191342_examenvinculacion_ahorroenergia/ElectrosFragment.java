@@ -2,19 +2,16 @@ package itesm.mx.a01191342_examenvinculacion_ahorroenergia;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ElectrosFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class ElectrosFragment extends ListFragment {
 
@@ -24,11 +21,12 @@ public class ElectrosFragment extends ListFragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment.
-     * @return A new instance of fragment ElectrosFragment.
-     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Log.d(DEBUG_TAG, "onCreate() has been called.");
+    }
 
     public static ElectrosFragment newInstance() {
         ElectrosFragment fragment = new ElectrosFragment();
@@ -38,20 +36,12 @@ public class ElectrosFragment extends ListFragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        Log.d(DEBUG_TAG, "onCreate() has been called.");
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         Log.d(DEBUG_TAG, "onCreateView() has been called.");
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_electros, container, false);
-        return inflater.inflate(R.layout.fragment_electros, container, false);
+
+        return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
     //Adds elements to the list fragment.

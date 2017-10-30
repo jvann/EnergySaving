@@ -124,23 +124,8 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d(DEBUG_TAG, "onCreateView() has been created.");
 
-            switch (getArguments().getInt(ARG_SECTION_NUMBER))
-            {
-                case 1:
-                    ElectrosFragment electrosFrag  = ElectrosFragment.newInstance();
-                    inflater.inflate(R.layout.fragment_electros, container, false);
-                    return electrosFrag.onCreateView(inflater, container, savedInstanceState);
-                case 2:
-                    EventsFragment eventsFrag  = EventsFragment.newInstance("Hellow", "World");
-                    inflater.inflate(R.layout.fragment_electros, container, false);
-                    return eventsFrag.onCreateView(inflater, container, savedInstanceState);
-                case 3:
-                    ReportFragment reportFrag  = ReportFragment.newInstance("Hellow", "World");
-                    inflater.inflate(R.layout.fragment_electros, container, false);
-                    return reportFrag.onCreateView(inflater, container, savedInstanceState);
-                default:
-                    return null;
-            }
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            return rootView;
         }
     }
 
@@ -161,7 +146,26 @@ public class MainActivity extends AppCompatActivity {
 
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+
+            Fragment frag;
+
+            switch (position)
+            {
+                case 0:
+                    frag = ElectrosFragment.newInstance();
+                    break;
+                case 1:
+                    frag = EventsFragment.newInstance();
+                    break;
+                case 2:
+                    frag = ReportFragment.newInstance();
+                    break;
+                default:
+                    frag = PlaceholderFragment.newInstance(position + 1);
+                    break;
+
+            }
+            return frag;
         }
 
         @Override
