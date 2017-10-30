@@ -24,4 +24,10 @@
         <item>30/5/2000</item>
     </string-array>
 
+    <!-- for row_electro.xml layout -->
+    <string name="id_electro">id</string>
+    <string name="name_electro">nombre</string>
+    <string name="watts_electro">cantidad</string>
+    <string name="image_electro">imagen</string>
+
 </resources>
