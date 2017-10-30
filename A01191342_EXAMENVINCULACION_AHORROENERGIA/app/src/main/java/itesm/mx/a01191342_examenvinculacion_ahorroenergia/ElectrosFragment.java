@@ -29,10 +29,8 @@ public class ElectrosFragment extends ListFragment {
     }
 
     public static ElectrosFragment newInstance() {
-        ElectrosFragment fragment = new ElectrosFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
+
+        return new ElectrosFragment();
     }
 
     @Override
@@ -41,7 +39,7 @@ public class ElectrosFragment extends ListFragment {
 
         Log.d(DEBUG_TAG, "onCreateView() has been called.");
 
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        return inflater.inflate(R.layout.fragment_electros, container, false);
     }
 
     //Adds elements to the list fragment.

@@ -2,6 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ReportFragment">
+    tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectrosFragment">
 
 </ListView>
