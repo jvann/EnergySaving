@@ -49,7 +49,7 @@ public class EventsFragment extends ListFragment {
 
         getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-        String[] electroNames = getResources().getStringArray(R.array.nombre_eventos);
+        String[] electroNames = getResources().getStringArray(R.array.dummy_events);
 
         //simple_list_item_activated_1 allows the change of color in the background.
         // when the item from the lsit is selected(clicked).
@@ -60,10 +60,10 @@ public class EventsFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
-        OnElectroSelectedListener listener = (OnElectroSelectedListener) getActivity();
+        OnItemClickedListener listener = (OnItemClickedListener) getActivity();
 
         Log.d(DEBUG_TAG, "onListItemClick() has been called.");
-        listener.onElectroSelected(position);
+        listener.onEventSelected(position);
     }
 
     @Override

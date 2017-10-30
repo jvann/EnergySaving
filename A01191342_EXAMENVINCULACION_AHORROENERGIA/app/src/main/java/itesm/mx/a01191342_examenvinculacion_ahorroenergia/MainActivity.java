@@ -18,9 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnItemClickedListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -89,6 +87,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onEventSelected(int position) {
+        Log.d(DEBUG_TAG, "Position Event: " + position);
+    }
+
+
+    @Override
+    public void onElectroSelected(int position) {
+        Log.d(DEBUG_TAG, "Position Electrodomestic: " + position);
+    }
+
+    @Override
+    public void onReportClick(int position) {
+        Log.d(DEBUG_TAG, "Position Report: " + position);
     }
 
     /**
