@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ElectrosFragment extends ListFragment {
+public class ElectrosFragment extends Fragment {
 
     private static final String DEBUG_TAG = "TAG_FRAG_ELECTROS";
 
@@ -24,6 +24,7 @@ public class ElectrosFragment extends ListFragment {
     private ElectroAdapter adapter;
     private ElectroOperations dao;
     private byte[] byteArray = null;
+    private ListView list;
 
     public ElectrosFragment() {
         // Required empty public constructor
@@ -46,15 +47,21 @@ public class ElectrosFragment extends ListFragment {
                              Bundle savedInstanceState) {
 
         Log.d(DEBUG_TAG, "onCreateView() has been called.");
+        View view = inflater.inflate(R.layout.fragment_electros, container, false);
 
-        dao = new ElectroOperations(this.getContext());//HERE POSSIBLE PROBLEM.
+        dao = new ElectroOperations(getContext());//HERE POSSIBLE PROBLEM.
         dao.open();
 
-        newElectro(1);
+        list = (ListView) view.findViewById(R.id.list_electros);
+        listElectros = showProducts();
+        adapter = new ElectroAdapter(getContext(), listElectros);//HERE POSSIBLE PROBLEM
+        list.setAdapter(adapter);
 
-        refreshView();
-
-        return inflater.inflate(R.layout.fragment_electros, container, false);
+        newElectro(2);
+//        dao.deleteAllElectros();
+//        refreshView();
+//        dao.setElectros();
+        return view;
     }
 
     //Adds elements to the list fragment.
@@ -62,13 +69,13 @@ public class ElectrosFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+//        getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
 //        String[] electroNames = getResources().getStringArray(R.array.dummy_electros);
         //simple_list_item_activated_1 allows the change of color in the background.
         // when the item from the lsit is selected(clicked).
 
-        setListAdapter(new ArrayAdapter<Electro>(getActivity(), android.R.layout.simple_list_item_activated_1, listElectros));
+//        setListAdapter(new ArrayAdapter<Electro>(getActivity(), android.R.layout.simple_list_item_activated_1, listElectros));
 
         Log.d(DEBUG_TAG, "onActivityCreated() has been called.");
     }
@@ -84,19 +91,13 @@ public class ElectrosFragment extends ListFragment {
         }
     }
 
-    @Override
-    public void onListItemClick(ListView listView, View view, int position, long id) {
-        OnItemClickedListener listener = (OnItemClickedListener) getActivity();
-
-        Log.d(DEBUG_TAG, "onListItemClick() has been called.");
-        listener.onElectroSelected(position);
-    }
-
-    public void refreshView() {
-        listElectros = showProducts();
-        adapter = new ElectroAdapter(getContext().getApplicationContext(), listElectros);//HERE POSSIBLE PROBLEM
-        setListAdapter(adapter);
-    }
+//    @Override
+//    public void onListItemClick(ListView listView, View view, int position, long id) {
+//        OnItemClickedListener listener = (OnItemClickedListener) getActivity();
+//
+//        Log.d(DEBUG_TAG, "onListItemClick() has been called.");
+//        listener.onElectroSelected(position);
+//    }
 
     public Electro newElectro(int i) {
 
