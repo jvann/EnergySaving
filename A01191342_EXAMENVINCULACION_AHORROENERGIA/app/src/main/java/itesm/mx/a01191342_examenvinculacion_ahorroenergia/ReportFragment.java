@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +22,8 @@ import android.widget.TextView;
 public class ReportFragment extends Fragment implements View.OnClickListener{
 
     private static final String DEBUG_TAG = "TAG_FRAG_REPORT";
+    private String getDatePicker;
+    private ArrayList<Event> eventList;
     private View rootView;
     private DatePicker datePicker;
     private Button btnSearch;
@@ -32,6 +37,8 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
     private TextView tvVentilador;
     private TextView tvTelevisor;
     private TextView tvRefrigerador;
+
+    private EventsOperations dao;
 
     public ReportFragment() {
         // Required empty public constructor
@@ -52,7 +59,9 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         rootView = inflater.inflate(R.layout.fragment_report, container, false);
+
         datePicker = (DatePicker) rootView.findViewById(R.id.datePicker);
         btnSearch = (Button) rootView.findViewById(R.id.button_search);
         tvLicuadora = (TextView) rootView.findViewById(R.id.text_1);
@@ -65,6 +74,10 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
         tvVentilador = (TextView) rootView.findViewById(R.id.text_15);
         tvTelevisor = (TextView) rootView.findViewById(R.id.text_17);
         tvRefrigerador = (TextView) rootView.findViewById(R.id.text_19);
+
+        dao = new EventsOperations(this.getContext());//HERE POSSIBLE PROBLEM.
+        dao.open();
+
 
         Log.d(DEBUG_TAG, "onCreateView() has been called.");
 
@@ -87,9 +100,22 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
 
+        getEventsReport();
         Log.d(DEBUG_TAG, "Report.onClick() has been called.");
     }
 
+    public void getEventsReport() {
+        ArrayList<Event> eventList = dao.getAllEvents();
+        getDatePicker = String.valueOf(datePicker.getYear()) + " " + String.valueOf(datePicker.getMonth()) + " " + String.valueOf(datePicker.getDayOfMonth());
+
+        Log.d("DATEPICKER", getDatePicker);
+
+        for (int i = 0; i < eventList.size(); i++) {
+
+        }
+
+
+    }
     @Override
     public void onStart() {
         super.onStart();
@@ -98,12 +124,14 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onResume() {
+        dao.open();
         super.onResume();
         Log.d(DEBUG_TAG, "onResume() has been called.");
     }
 
     @Override
     public void onPause() {
+        dao.close();
         super.onPause();
         Log.d(DEBUG_TAG, "onPause() has been called.");
     }
