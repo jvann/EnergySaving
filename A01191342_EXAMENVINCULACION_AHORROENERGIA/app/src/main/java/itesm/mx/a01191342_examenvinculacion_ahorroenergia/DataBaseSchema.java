@@ -17,4 +17,13 @@ public final class DataBaseSchema {
         public static final String COLUMN_IMAGE = "image";
 
     }
+
+    public static class EventsTable implements BaseColumns {
+        public static final String TABLE_NAME = "Events";
+        public static final String COLUMN_DATE = "date";
+        public static final String COLUMN_TYPE = "type";
+        public static final String COLUMN_IMAGE = "image";
+        public static final String COLUMN_USE = "use"; //In hours
+
+    }
 }

@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +19,11 @@ import android.widget.ListView;
 public class ElectrosFragment extends ListFragment {
 
     private static final String DEBUG_TAG = "TAG_FRAG_ELECTROS";
+
+    private ArrayList<Electro> listElectros;
+    private ElectroAdapter adapter;
+    private ElectroOperations dao;
+    private byte[] byteArray = null;
 
     public ElectrosFragment() {
         // Required empty public constructor
@@ -39,6 +47,13 @@ public class ElectrosFragment extends ListFragment {
 
         Log.d(DEBUG_TAG, "onCreateView() has been called.");
 
+        dao = new ElectroOperations(this.getContext());//HERE POSSIBLE PROBLEM.
+        dao.open();
+
+        newElectro(1);
+
+        refreshView();
+
         return inflater.inflate(R.layout.fragment_electros, container, false);
     }
 
@@ -49,13 +64,24 @@ public class ElectrosFragment extends ListFragment {
 
         getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-        String[] electroNames = getResources().getStringArray(R.array.dummy_electros);
-
+//        String[] electroNames = getResources().getStringArray(R.array.dummy_electros);
         //simple_list_item_activated_1 allows the change of color in the background.
         // when the item from the lsit is selected(clicked).
-        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_activated_1, electroNames));
+
+        setListAdapter(new ArrayAdapter<Electro>(getActivity(), android.R.layout.simple_list_item_activated_1, listElectros));
 
         Log.d(DEBUG_TAG, "onActivityCreated() has been called.");
+    }
+
+    public ArrayList<Electro> showProducts() {
+
+        ArrayList<Electro> electroList = dao.getAllElectros();
+
+        if (electroList != null) {
+            return electroList;
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -66,6 +92,26 @@ public class ElectrosFragment extends ListFragment {
         listener.onElectroSelected(position);
     }
 
+    public void refreshView() {
+        listElectros = showProducts();
+        adapter = new ElectroAdapter(getContext().getApplicationContext(), listElectros);//HERE POSSIBLE PROBLEM
+        setListAdapter(adapter);
+    }
+
+    public Electro newElectro(int i) {
+
+        //Dummy electrodomestics.
+        int watts = i * 25;
+        String name = "Test" + i;
+        Electro electro = new Electro(name, watts, byteArray);
+        long id = dao.addElectro(electro);
+        electro.setID(id);
+
+        Toast.makeText(getContext().getApplicationContext(), "Electro added", Toast.LENGTH_SHORT).show();
+
+        return electro;
+    }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -74,12 +120,14 @@ public class ElectrosFragment extends ListFragment {
 
     @Override
     public void onResume() {
+        dao.open();
         super.onResume();
         Log.d(DEBUG_TAG, "onResume() has been called.");
     }
 
     @Override
     public void onPause() {
+        dao.close();
         super.onPause();
         Log.d(DEBUG_TAG, "onPause() has been called.");
     }

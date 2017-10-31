@@ -23,9 +23,11 @@ public class ElectroDBHelper extends SQLiteOpenHelper {
     public void onCreate (SQLiteDatabase db) {
 
         String CREATE_ELECTROS_TABLE = "CREATE TABLE " +
+                DataBaseSchema.ElectrosTable.TABLE_NAME +
+                "(" +
                 DataBaseSchema.ElectrosTable._ID + " INTEGER PRIMARY KEY, " +
-                DataBaseSchema.ElectrosTable.COLUMN_NAME + " TEXT, " +
-                DataBaseSchema.ElectrosTable.COLUMN_WATTS + " INTEGER, " +
+                DataBaseSchema.ElectrosTable.COLUMN_NAME + " TEXT," +
+                DataBaseSchema.ElectrosTable.COLUMN_WATTS + " INTEGER,"+
                 DataBaseSchema.ElectrosTable.COLUMN_IMAGE + " BLOB " +
                 ")";
 
