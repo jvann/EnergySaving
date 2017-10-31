@@ -83,19 +83,6 @@ public class EventsFragment extends Fragment implements AdapterView.OnItemClickL
         }
     }
 
-//    public Event newEvent(int i) {
-//
-//        //Dummy events.
-//        int watts = i * 25;
-//        Event event = new Event("12/12/2017", "Licuadora", byteArray, 125);
-//        long id = dao.addEvent(event);
-//        event.setID(id);
-//
-//        Toast.makeText(getContext().getApplicationContext(), "Event added", Toast.LENGTH_SHORT).show();
-//
-//        return event;
-//    }
-
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         OnItemClickedListener listener = (OnItemClickedListener) getActivity();
