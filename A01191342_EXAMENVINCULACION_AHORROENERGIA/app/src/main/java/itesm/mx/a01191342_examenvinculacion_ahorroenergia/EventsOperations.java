@@ -69,7 +69,7 @@ public class EventsOperations {
                         Integer.parseInt(cursor.getString(0)),
                         cursor.getString(1),
                         cursor.getString(2),
-                        cursor.getBlob(3),
+                        Integer.parseInt(cursor.getString(3)),
                         Integer.parseInt(cursor.getString(4))
                 );
             }
@@ -120,7 +120,7 @@ public class EventsOperations {
                             Integer.parseInt(cursor.getString(0)),
                             cursor.getString(1),
                             cursor.getString(2),
-                            cursor.getBlob(3),
+                            Integer.parseInt(cursor.getString(3)),
                             Integer.parseInt(cursor.getString(4))
                     );
 

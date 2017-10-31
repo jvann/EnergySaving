@@ -11,25 +11,25 @@ public class Event {
     private long id;
     private String date;
     private String type;
-    private byte[] picture;
+    private int picture;
     private int use;
 
     public Event() {
         this.id = 0;
         this.date = null;
         this.type = null;
-        this.picture = null;
+        this.picture = 0;
         this.use = 0;
     }
 
-    public Event (String date, String type, byte[] picture, int use) {
+    public Event (String date, String type, int picture, int use) {
         this.date = date;
         this.type = type;
         this.picture = picture;
         this.use = use;
     }
 
-    public Event (long id, String date, String type, byte[] picture, int use) {
+    public Event (long id, String date, String type, int picture, int use) {
         this.id = id;
         this.date = date;
         this.type = type;
@@ -61,11 +61,11 @@ public class Event {
         this.type = type;
     }
 
-    public byte[] getPicture() {
+    public int getPicture() {
         return picture;
     }
 
-    public void setPicture(byte[] picture) {
+    public void setPicture(int picture) {
         this.picture = picture;
     }
 

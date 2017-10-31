@@ -27,7 +27,7 @@ public class EventDBHelper extends SQLiteOpenHelper {
                 DataBaseSchema.EventsTable._ID + " INTEGER PRIMARY KEY, " +
                 DataBaseSchema.EventsTable.COLUMN_DATE + " TEXT," +//Comes from timestamp, needs to be converted at the moment of inserting.
                 DataBaseSchema.EventsTable.COLUMN_TYPE + " TEXT," +
-                DataBaseSchema.EventsTable.COLUMN_IMAGE + " BLOB," +
+                DataBaseSchema.EventsTable.COLUMN_IMAGE + " INTEGER," +
                 DataBaseSchema.EventsTable.COLUMN_USE + " INTEGER " +
                 ")";
 

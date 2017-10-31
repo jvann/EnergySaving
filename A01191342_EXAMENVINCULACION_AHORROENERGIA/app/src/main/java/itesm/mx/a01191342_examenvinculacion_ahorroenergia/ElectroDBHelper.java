@@ -28,7 +28,7 @@ public class ElectroDBHelper extends SQLiteOpenHelper {
                 DataBaseSchema.ElectrosTable._ID + " INTEGER PRIMARY KEY, " +
                 DataBaseSchema.ElectrosTable.COLUMN_NAME + " TEXT," +
                 DataBaseSchema.ElectrosTable.COLUMN_WATTS + " INTEGER,"+
-                DataBaseSchema.ElectrosTable.COLUMN_IMAGE + " BLOB " +
+                DataBaseSchema.ElectrosTable.COLUMN_IMAGE + " INTEGER " +
                 ")";
 
         Log.d(DEBUG_TAG, CREATE_ELECTROS_TABLE);
