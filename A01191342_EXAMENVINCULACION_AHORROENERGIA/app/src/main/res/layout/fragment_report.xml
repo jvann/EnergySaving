@@ -14,8 +14,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,17 +25,17 @@
 
             <TextView
                 android:id="@+id/text_0"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Licuadora" />
 
             <TextView
                 android:id="@+id/text_1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -44,17 +45,17 @@
 
             <TextView
                 android:id="@+id/text_2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Estereo musical" />
 
             <TextView
                 android:id="@+id/text_3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -64,17 +65,17 @@
 
             <TextView
                 android:id="@+id/text_4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Cafetera" />
 
             <TextView
                 android:id="@+id/text_5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -84,17 +85,17 @@
 
             <TextView
                 android:id="@+id/text_6"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Radiograbadora" />
 
             <TextView
                 android:id="@+id/text_7"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -104,17 +105,17 @@
 
             <TextView
                 android:id="@+id/text_8"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Lavadora ropa (automatica) " />
 
             <TextView
                 android:id="@+id/text_9"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -124,17 +125,17 @@
 
             <TextView
                 android:id="@+id/text_10"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Horno de microondas " />
 
             <TextView
                 android:id="@+id/text_11"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -144,17 +145,17 @@
 
             <TextView
                 android:id="@+id/text_12"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Plancha" />
 
             <TextView
                 android:id="@+id/text_13"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -164,17 +165,17 @@
 
             <TextView
                 android:id="@+id/text_14"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Ventilador" />
 
             <TextView
                 android:id="@+id/text_15"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -184,17 +185,17 @@
 
             <TextView
                 android:id="@+id/text_16"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Televisor color " />
 
             <TextView
                 android:id="@+id/text_17"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -204,18 +205,27 @@
 
             <TextView
                 android:id="@+id/text_18"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Refrigerador" />
 
             <TextView
                 android:id="@+id/text_19"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="0" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:background="@color/colorAccent"
+            android:text="Buscar"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
