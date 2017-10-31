@@ -30,4 +30,9 @@
     <string name="watts_electro">cantidad</string>
     <string name="image_electro">imagen</string>
 
+    <string name="id_event">id</string>
+    <string name="name_event">nombre</string>
+    <string name="watts_event">cantidad</string>
+    <string name="image_event">imagen</string>
+
 </resources>

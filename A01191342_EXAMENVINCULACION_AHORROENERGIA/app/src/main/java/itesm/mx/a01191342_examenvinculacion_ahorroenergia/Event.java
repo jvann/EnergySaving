@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 public class Event {
 
     private long id;
-    private Timestamp date;
+    private String date;
     private String type;
     private byte[] picture;
     private int use;
@@ -22,14 +22,14 @@ public class Event {
         this.use = 0;
     }
 
-    public Event (Timestamp date, String type, byte[] picture, int use) {
+    public Event (String date, String type, byte[] picture, int use) {
         this.date = date;
         this.type = type;
         this.picture = picture;
         this.use = use;
     }
 
-    public Event (long id, Timestamp date, String type, byte[] picture, int use) {
+    public Event (long id, String date, String type, byte[] picture, int use) {
         this.id = id;
         this.date = date;
         this.type = type;
@@ -45,11 +45,11 @@ public class Event {
         this.id = id;
     }
 
-    public Timestamp getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

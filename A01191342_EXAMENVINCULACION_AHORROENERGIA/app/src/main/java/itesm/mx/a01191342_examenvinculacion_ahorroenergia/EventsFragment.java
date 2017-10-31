@@ -9,6 +9,9 @@ package itesm.mx.a01191342_examenvinculacion_ahorroenergia;
         import android.view.ViewGroup;
         import android.widget.ArrayAdapter;
         import android.widget.ListView;
+        import android.widget.Toast;
+
+        import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +19,11 @@ package itesm.mx.a01191342_examenvinculacion_ahorroenergia;
 public class EventsFragment extends ListFragment {
 
     private static final String DEBUG_TAG = "TAG_FRAG_EVENTS";
+
+    private ArrayList<Event> listEvents;
+    private EventAdapter adapter;
+    private EventsOperations dao;
+    private byte[] byteArray = null;
 
     public EventsFragment() {
         // Required empty public constructor
@@ -39,6 +47,13 @@ public class EventsFragment extends ListFragment {
 
         Log.d(DEBUG_TAG, "onCreateView() has been called.");
 
+        dao = new EventsOperations(this.getContext());//HERE POSSIBLE PROBLEM.
+        dao.open();
+
+        newEvent(1);
+
+        refreshView();
+
         return inflater.inflate(R.layout.fragment_events, container, false);
     }
 
@@ -49,15 +64,44 @@ public class EventsFragment extends ListFragment {
 
         getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-        String[] electroNames = getResources().getStringArray(R.array.dummy_events);
+//        String[] electroNames = getResources().getStringArray(R.array.dummy_events);
 
         //simple_list_item_activated_1 allows the change of color in the background.
         // when the item from the lsit is selected(clicked).
-        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_activated_1, electroNames));
+        setListAdapter(new ArrayAdapter<Event>(getActivity(), android.R.layout.simple_list_item_activated_1, listEvents));
 
         Log.d(DEBUG_TAG, "onActivityCreated() has been called.");
     }
 
+    public ArrayList<Event> showProducts() {
+
+        ArrayList<Event> eventList = dao.getAllEvents();
+
+        if (eventList != null) {
+            return eventList;
+        } else {
+            return null;
+        }
+    }
+
+    public void refreshView() {
+        listEvents = showProducts();
+        adapter = new EventAdapter(getContext().getApplicationContext(), listEvents);//HERE POSSIBLE PROBLEM
+        setListAdapter(adapter);
+    }
+
+    public Event newEvent(int i) {
+
+        //Dummy events.
+        int watts = i * 25;
+        Event event = new Event("12/12/2017", "Licuadora", byteArray, 125);
+        long id = dao.addEvent(event);
+        event.setID(id);
+
+        Toast.makeText(getContext().getApplicationContext(), "Event added", Toast.LENGTH_SHORT).show();
+
+        return event;
+    }
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         OnItemClickedListener listener = (OnItemClickedListener) getActivity();
@@ -74,12 +118,14 @@ public class EventsFragment extends ListFragment {
 
     @Override
     public void onResume() {
+        dao.open();
         super.onResume();
         Log.d(DEBUG_TAG, "onResume() has been called.");
     }
 
     @Override
     public void onPause() {
+        dao.close();
         super.onPause();
         Log.d(DEBUG_TAG, "onPause() has been called.");
     }

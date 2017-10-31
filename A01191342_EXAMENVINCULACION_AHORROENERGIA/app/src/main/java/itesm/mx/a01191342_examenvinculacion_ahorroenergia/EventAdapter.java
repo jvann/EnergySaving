@@ -25,10 +25,10 @@ public class EventAdapter extends ArrayAdapter<Event> {
     public View getView (int position, View convertView, ViewGroup parent) {
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_electros, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_events, parent, false);
         }
 
-        TextView tvName = (TextView) convertView.findViewById(R.id.tv_name_electro);
+        TextView tvName = (TextView) convertView.findViewById(R.id.tv_name_event);
 
         Event event = getItem(position);
         tvName.setText(event.getType());
