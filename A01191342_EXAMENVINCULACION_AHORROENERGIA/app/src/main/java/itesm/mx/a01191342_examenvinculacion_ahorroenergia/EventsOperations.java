@@ -134,4 +134,8 @@ public class EventsOperations {
         }
         return listEvents;
     }
+
+    public void deleteEvents(){
+        db.execSQL("delete from " + DataBaseSchema.EventsTable.TABLE_NAME);
+    }
 }

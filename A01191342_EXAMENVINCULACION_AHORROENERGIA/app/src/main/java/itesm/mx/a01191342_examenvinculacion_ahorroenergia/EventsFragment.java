@@ -50,8 +50,6 @@ public class EventsFragment extends ListFragment {
         dao = new EventsOperations(this.getContext());//HERE POSSIBLE PROBLEM.
         dao.open();
 
-        newEvent(1);
-
         refreshView();
 
         return inflater.inflate(R.layout.fragment_events, container, false);

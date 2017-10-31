@@ -24,7 +24,6 @@ public class ElectrosFragment extends Fragment implements AdapterView.OnItemClic
     private ArrayList<Electro> listElectros;
     private ElectroAdapter adapter;
     private ElectroOperations dao;
-    private byte[] byteArray = null;
     private ListView list;
 
     public ElectrosFragment() {
