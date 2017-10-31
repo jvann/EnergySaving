@@ -9,8 +9,12 @@ import java.util.ArrayList;
 public class MasterData {
     private static MasterData instance = null;
 
+    private ArrayList<Electro> listElectros;
+    private ArrayList<String> listElectroNames;
+
     private MasterData() {
 
+        createData();
         if (instance != null) {
             throw new RuntimeException("Use getInstance() to get a single instance of MasterData");
         }
@@ -28,9 +32,9 @@ public class MasterData {
         return instance;
     }
 
-    public ArrayList<Electro> getAllElectros () {
+    private void createData() {
 
-        ArrayList<Electro> listElectros = new ArrayList<Electro>();
+        listElectros = new ArrayList<Electro>();
 
         Electro electro;
         electro = new Electro ("Licuadora", 125, R.drawable.meditation);
@@ -54,6 +58,37 @@ public class MasterData {
         electro = new Electro ("Refrigerador", 610, R.drawable.meditation);
         listElectros.add(electro);
 
-        return listElectros;
+        listElectroNames = new ArrayList<String>();
+
+        String electroName;
+        electroName = new String ("Licuadora");
+        listElectroNames.add(electroName);
+        electroName = new String ("Estereo musical");
+        listElectroNames.add(electroName);
+        electroName = new String ("Cafetera");
+        listElectroNames.add(electroName);
+        electroName = new String ("Radiograbadora");
+        listElectroNames.add(electroName);
+        electroName = new String ("Lavadora ropa (automatica) ");
+        listElectroNames.add(electroName);
+        electroName = new String ("Horno de microondas ");
+        listElectroNames.add(electroName);
+        electroName = new String ("Plancha");
+        listElectroNames.add(electroName);
+        electroName = new String ("Ventilador");
+        listElectroNames.add(electroName);
+        electroName = new String ("Televisor color");
+        listElectroNames.add(electroName);
+        electroName = new String ("Refrigerador");
+        listElectroNames.add(electroName);
+
+    }
+
+    public ArrayList<Electro> getAllElectros () {
+        return this.listElectros;
+    }
+
+    public ArrayList<String> getAllElectroNames () {
+        return listElectroNames;
     }
 }
