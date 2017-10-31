@@ -9,22 +9,22 @@ public class Electro {
     private long id;
     private String name;
     private int watts;
-    private byte[] picture;
+    private int picture;
 
     public Electro() {
         this.id = 0;
         this.name = null;
         this.watts = 0;
-        this.picture = null;
+        this.picture = 0;
     }
 
-    public Electro (String name, int watts, byte[] picture) {
+    public Electro (String name, int watts, int picture) {
         this.name = name;
         this.watts = watts;
         this.picture = picture;
     }
 
-    public Electro (long id, String name, int watts, byte[] picture) {
+    public Electro (long id, String name, int watts, int picture) {
         this.id = id;
         this.name = name;
         this.watts = watts;
@@ -56,11 +56,11 @@ public class Electro {
         this.watts = watts;
     }
 
-    public byte[] getPicture() {
+    public int getPicture() {
         return picture;
     }
 
-    public void setPicture(byte[] picture) {
+    public void setPicture(int picture) {
         this.picture = picture;
     }
 }

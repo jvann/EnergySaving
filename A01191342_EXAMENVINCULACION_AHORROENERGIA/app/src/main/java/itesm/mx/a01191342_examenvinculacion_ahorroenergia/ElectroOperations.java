@@ -68,7 +68,7 @@ public class ElectroOperations {
                         Integer.parseInt(cursor.getString(0)),
                         cursor.getString(1),
                         Integer.parseInt(cursor.getString(2)),
-                        cursor.getBlob(3)
+                        Integer.parseInt(cursor.getString(3))
                 );
             }
             cursor.close();
@@ -118,7 +118,7 @@ public class ElectroOperations {
                             Integer.parseInt(cursor.getString(0)),
                             cursor.getString(1),
                             Integer.parseInt(cursor.getString(2)),
-                            cursor.getBlob(3)
+                            Integer.parseInt(cursor.getString(3))
                     );
 
                     listaElectros.add(electro);
