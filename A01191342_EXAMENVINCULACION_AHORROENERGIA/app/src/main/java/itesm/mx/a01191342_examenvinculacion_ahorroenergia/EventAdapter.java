@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -29,9 +30,13 @@ public class EventAdapter extends ArrayAdapter<Event> {
         }
 
         TextView tvName = (TextView) convertView.findViewById(R.id.tv_name_event);
+        TextView tvDate = (TextView) convertView.findViewById(R.id.text_dateEvent);
+        ImageView ivImageEvent = (ImageView) convertView.findViewById(R.id.image_event);
 
         Event event = getItem(position);
         tvName.setText(event.getType());
+        tvDate.setText(event.getDate());
+        ivImageEvent.setImageResource(event.getPicture());
 
         return convertView;
     }
