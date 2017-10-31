@@ -13,7 +13,7 @@ import android.widget.ListView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ReportFragment extends ListFragment {
+public class ReportFragment extends Fragment implements View.OnClickListener{
 
     private static final String DEBUG_TAG = "TAG_FRAG_REPORT";
 
@@ -47,23 +47,15 @@ public class ReportFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-
-        String[] electroNames = getResources().getStringArray(R.array.dummy_report);
-
         //simple_list_item_activated_1 allows the change of color in the background.
         // when the item from the lsit is selected(clicked).
-        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_activated_1, electroNames));
 
         Log.d(DEBUG_TAG, "onActivityCreated() has been called.");
     }
 
     @Override
-    public void onListItemClick(ListView listView, View view, int position, long id) {
-        OnItemClickedListener listener = (OnItemClickedListener) getActivity();
-
-        Log.d(DEBUG_TAG, "onListItemClick() has been called.");
-        listener.onReportClick(position);
+    public void onClick(View view) {
+        Log.d(DEBUG_TAG, "onClick() has been called.");
     }
 
     @Override

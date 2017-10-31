@@ -61,12 +61,16 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
 
-        String sInput = date.getText().toString() + " " +  sItems.getSelectedItem().toString() + " " +  R.drawable.meditation + " " + Integer.parseInt(etUse.getText().toString());
-        Event event = new Event(date.getText().toString(), sItems.getSelectedItem().toString(), R.drawable.meditation, Integer.parseInt(etUse.getText().toString()));
-        Log.d(DEBUG_TAG, sInput);
-        dao.addEvent(event);
-        Toast.makeText(this, "Evento agregado exitosamente", Toast.LENGTH_SHORT).show();
-        finish();
+//        if (etUse.getText().equals("")) {
+            String sInput = date.getText().toString() + " " +  sItems.getSelectedItem().toString() + " " +  R.drawable.meditation + " " + Integer.parseInt(etUse.getText().toString());
+            Event event = new Event(date.getText().toString(), sItems.getSelectedItem().toString(), R.drawable.meditation, Integer.parseInt(etUse.getText().toString()));
+            Log.d(DEBUG_TAG, sInput);
+            dao.addEvent(event);
+            Toast.makeText(this, "Evento agregado exitosamente", Toast.LENGTH_SHORT).show();
+            finish();
+//        } else {
+//            Toast.makeText(this, "Porfavor ingrese horas de uso.", Toast.LENGTH_SHORT).show();
+//        }
     }
 
     @Override
