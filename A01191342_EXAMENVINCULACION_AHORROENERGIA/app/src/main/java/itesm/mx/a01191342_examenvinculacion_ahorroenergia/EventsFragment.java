@@ -24,6 +24,7 @@ public class EventsFragment extends Fragment implements AdapterView.OnItemClickL
     private EventAdapter adapter;
     private EventsOperations dao;
     private ListView listEvent;
+    private View view;
 
     public EventsFragment() {
         // Required empty public constructor
@@ -47,16 +48,12 @@ public class EventsFragment extends Fragment implements AdapterView.OnItemClickL
 
         Log.d(DEBUG_TAG, "onCreateView() has been called.");
 
-        View view = inflater.inflate(R.layout.fragment_events, container, false);
+        view = inflater.inflate(R.layout.fragment_events, container, false);
 
         dao = new EventsOperations(this.getContext());//HERE POSSIBLE PROBLEM.
         dao.open();
 
-        listEvent = (ListView) view.findViewById(R.id.list_events);
-        listEvents = showProducts();
-        listEvent.setOnItemClickListener(this);
-        adapter = new EventAdapter(getContext(), listEvents);
-        listEvent.setAdapter(adapter);
+        refreshView(view);
 
         return view;
     }
@@ -70,6 +67,14 @@ public class EventsFragment extends Fragment implements AdapterView.OnItemClickL
         // when the item from the lsit is selected(clicked).
 
         Log.d(DEBUG_TAG, "onActivityCreated() has been called.");
+    }
+
+    public void refreshView(View view) {
+        listEvent = (ListView) view.findViewById(R.id.list_events);
+        listEvents = showProducts();
+        listEvent.setOnItemClickListener(this);
+        adapter = new EventAdapter(getContext(), listEvents);
+        listEvent.setAdapter(adapter);
     }
 
     public ArrayList<Event> showProducts() {
@@ -100,6 +105,7 @@ public class EventsFragment extends Fragment implements AdapterView.OnItemClickL
     @Override
     public void onResume() {
         dao.open();
+        refreshView(view);
         super.onResume();
         Log.d(DEBUG_TAG, "onResume() has been called.");
     }
