@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="450dp"
+    android:layout_height="470dp"
     android:orientation="vertical"
     android:weightSum="1"
     tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ReportFragment">
@@ -264,7 +264,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="34dp"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
@@ -288,6 +288,10 @@
                 android:textAlignment="viewStart"
                 android:textSize="18sp" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
 
         <Button
             android:id="@+id/button_search"
