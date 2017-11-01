@@ -1,229 +1,300 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="450dp"
     android:orientation="vertical"
+    android:weightSum="1"
     tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ReportFragment">
 
     <DatePicker
         android:id="@+id/datePicker"
         android:layout_width="match_parent"
-        android:layout_height="154dp"
-        android:datePickerMode="spinner"
-        android:calendarViewShown="false"/>
+        android:layout_height="148dp"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_0"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Licuadora" />
+                android:paddingTop="4dp"
+                android:text="Licuadora"
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Estereo musical" />
+                android:paddingTop="4dp"
+                android:text="Estereo musical"
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Cafetera" />
+                android:paddingTop="4dp"
+                android:text="Cafetera"
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Radiograbadora" />
+                android:paddingTop="4dp"
+                android:text="Radiograbadora"
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_8"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Lavadora ropa (automatica) " />
+                android:paddingTop="4dp"
+                android:text="Lavadora ropa (automatica) "
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_9"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Horno de microondas " />
+                android:paddingTop="4dp"
+                android:text="Horno de microondas "
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_11"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_12"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Plancha" />
+                android:paddingTop="4dp"
+                android:text="Plancha"
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_13"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_14"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Ventilador" />
+                android:paddingTop="4dp"
+                android:text="Ventilador"
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_15"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_16"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Televisor color " />
+                android:paddingTop="4dp"
+                android:text="Televisor color "
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_17"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="34dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_18"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Refrigerador" />
+                android:paddingTop="4dp"
+                android:text="Refrigerador"
+                android:textAlignment="viewEnd"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_19"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <Button
             android:id="@+id/button_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.15"
             android:background="@color/colorAccent"
+            android:paddingTop="0dp"
             android:text="Buscar"
             android:textColor="#FFFFFF" />
 
