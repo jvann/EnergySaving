@@ -100,12 +100,16 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
     public void onElectroSelected(int position) {
         Log.d(DEBUG_TAG, "Position Electrodomestic: " + position);
 
-        DetalleElectro detalleElectro = DetalleElectro.newInstance(position);
+        Intent intent = new Intent(MainActivity.this, ElectroDetalle.class);
+        intent.putExtra("position", position);
+        startActivity(intent);
 
-        FragmentTransaction fragTrans = getSupportFragmentManager().beginTransaction();
-        fragTrans.replace(R.id.container, detalleElectro, "TAG_DETALLE_ELECTRO");
-        fragTrans.addToBackStack("TAG_DETALLE_ELECTRO");
-        fragTrans.commit();
+//        DetalleElectro detalleElectro = DetalleElectro.newInstance(position);
+//
+//        FragmentTransaction fragTrans = getSupportFragmentManager().beginTransaction();
+//        fragTrans.replace(R.id.container_fargments, detalleElectro, "TAG_DETALLE_ELECTRO");
+//        fragTrans.addToBackStack("TAG_DETALLE_ELECTRO");
+//        fragTrans.commit();
     }
 
     @Override
