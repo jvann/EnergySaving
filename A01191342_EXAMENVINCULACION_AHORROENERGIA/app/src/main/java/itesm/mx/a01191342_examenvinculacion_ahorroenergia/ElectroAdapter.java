@@ -29,9 +29,12 @@ public class ElectroAdapter extends ArrayAdapter<Electro> {
         }
 
         TextView tvName = (TextView) convertView.findViewById(R.id.tv_name_electro);
+        TextView tvKwh = (TextView) convertView.findViewById(R.id.text_kwh);
 
         Electro electro = getItem(position);
+
         tvName.setText(electro.getNameE());
+        tvKwh.setText(electro.getWatts() + " KWH");
 
         return convertView;
     }

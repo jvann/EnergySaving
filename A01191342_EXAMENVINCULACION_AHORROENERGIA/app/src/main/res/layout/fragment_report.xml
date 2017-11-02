@@ -9,7 +9,7 @@
     <DatePicker
         android:id="@+id/datePicker"
         android:layout_width="match_parent"
-        android:layout_height="148dp"
+        android:layout_height="146dp"
         android:calendarViewShown="false"
         android:datePickerMode="spinner" />
 
@@ -31,8 +31,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Licuadora"
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_1"
@@ -58,8 +57,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Estereo musical"
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_3"
@@ -85,8 +83,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Cafetera"
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_5"
@@ -112,8 +109,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Radiograbadora"
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_7"
@@ -139,8 +135,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Lavadora ropa (automatica) "
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_9"
@@ -166,8 +161,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Horno de microondas "
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_11"
@@ -193,8 +187,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Plancha"
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_13"
@@ -220,8 +213,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Ventilador"
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_15"
@@ -247,8 +239,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Televisor color "
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_17"
@@ -274,8 +265,7 @@
                 android:layout_weight="1"
                 android:paddingTop="4dp"
                 android:text="Refrigerador"
-                android:textAlignment="viewEnd"
-                android:textStyle="bold" />
+                android:textAlignment="viewEnd" />
 
             <TextView
                 android:id="@+id/text_19"
@@ -289,14 +279,44 @@
                 android:textSize="18sp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_total"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp"
+                android:text="Total:"
+                android:textAlignment="textEnd"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_totalValue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="8dp" />
+            android:layout_height="4dp" />
 
         <Button
             android:id="@+id/button_search"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="28dp"
             android:background="@color/colorAccent"
             android:paddingTop="0dp"
             android:text="Buscar"

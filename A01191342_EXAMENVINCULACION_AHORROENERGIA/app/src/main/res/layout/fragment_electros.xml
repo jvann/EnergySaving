@@ -2,10 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectrosFragment">
+    android:orientation="vertical"
+    tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectrosFragment"
+    android:weightSum="1">
 
     <ListView
         android:id="@+id/list_electros"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="340dp"
+        android:layout_weight="0.30" />
 </LinearLayout>

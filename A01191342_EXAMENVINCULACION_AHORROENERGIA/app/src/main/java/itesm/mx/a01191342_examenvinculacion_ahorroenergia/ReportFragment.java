@@ -22,6 +22,7 @@ import java.util.ArrayList;
 public class ReportFragment extends Fragment implements View.OnClickListener{
 
     private static final String DEBUG_TAG = "TAG_FRAG_REPORT";
+    private int totalKwh;
     private String getDatePicker;
     private ArrayList<Event> eventList;
     private View rootView;
@@ -37,6 +38,7 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
     private TextView tvVentilador;
     private TextView tvTelevisor;
     private TextView tvRefrigerador;
+    private TextView tvTotal;
 
     private EventsOperations dao;
 
@@ -74,6 +76,9 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
         tvVentilador = (TextView) rootView.findViewById(R.id.text_15);
         tvTelevisor = (TextView) rootView.findViewById(R.id.text_17);
         tvRefrigerador = (TextView) rootView.findViewById(R.id.text_19);
+        tvTotal = (TextView) rootView.findViewById(R.id.text_totalValue);
+
+        totalKwh = 0;
 
         dao = new EventsOperations(this.getContext());//HERE POSSIBLE PROBLEM.
         dao.open();
@@ -115,6 +120,8 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
         tvVentilador.setText("0");
         tvTelevisor.setText("0");
         tvRefrigerador.setText("0");
+        tvTotal.setText("0");
+        totalKwh = 0;
     }
     public void getEventsReport() {
 
@@ -135,65 +142,76 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvLicuadora.getText().toString()) + eventList.get(i).getUse()*125));
+                        totalKwh = totalKwh + Integer.parseInt(tvLicuadora.getText().toString());
                         break;
                     case "Estereo musical":
                         tvEstereo.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvEstereo.getText().toString()) + eventList.get(i).getUse()*100));
+                        totalKwh = totalKwh + Integer.parseInt(tvEstereo.getText().toString());
                         break;
                     case "Cafetera":
                         tvCafetera.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvCafetera.getText().toString()) + eventList.get(i).getUse()*895));
+                        totalKwh = totalKwh + Integer.parseInt(tvCafetera.getText().toString());
                         break;
                     case "Radiograbadora":
                         tvRadiograbadora.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvRadiograbadora.getText().toString()) + eventList.get(i).getUse()*70));
+                        totalKwh = totalKwh + Integer.parseInt(tvRadiograbadora.getText().toString());
                         break;
                     case "Lavadora ropa (automatica)":
                         tvLavadora.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvLavadora.getText().toString()) + eventList.get(i).getUse()*510));
+                        totalKwh = totalKwh + Integer.parseInt(tvLavadora.getText().toString());
                         break;
                     case "Horno de microondas":
                         tvHorno.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvHorno.getText().toString()) + eventList.get(i).getUse()*1450));
+                        totalKwh = totalKwh + Integer.parseInt(tvHorno.getText().toString());
                         break;
                     case "Plancha":
                         tvPlancha.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvPlancha.getText().toString()) + eventList.get(i).getUse()*1000));
+                        totalKwh = totalKwh + Integer.parseInt(tvPlancha.getText().toString());
                         break;
                     case "Ventilador":
                         tvVentilador.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvVentilador.getText().toString()) + eventList.get(i).getUse()*85));
+                        totalKwh = totalKwh + Integer.parseInt(tvVentilador.getText().toString());
                         break;
                     case "Televisor color":
                         tvTelevisor.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvTelevisor.getText().toString()) + eventList.get(i).getUse()*400));
+                        totalKwh = totalKwh + Integer.parseInt(tvTelevisor.getText().toString());
                         break;
                     case "Refrigerador":
                         tvRefrigerador.setText(
                                 String.valueOf(
                                         Integer.parseInt(
                                                 tvRefrigerador.getText().toString()) + eventList.get(i).getUse()*610));
+                        totalKwh = totalKwh + Integer.parseInt(tvRefrigerador.getText().toString());
                         break;
                     default:
                         break;
                 }
             }
+            tvTotal.setText(totalKwh + " KWH");
         }
     }
 
