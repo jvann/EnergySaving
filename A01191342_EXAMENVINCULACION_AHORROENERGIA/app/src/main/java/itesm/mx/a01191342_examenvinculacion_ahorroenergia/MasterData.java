@@ -69,9 +69,9 @@ public class MasterData {
         listElectroNames.add(electroName);
         electroName = new String ("Radiograbadora");
         listElectroNames.add(electroName);
-        electroName = new String ("Lavadora ropa (automatica) ");
+        electroName = new String ("Lavadora ropa (automatica)");
         listElectroNames.add(electroName);
-        electroName = new String ("Horno de microondas ");
+        electroName = new String ("Horno de microondas");
         listElectroNames.add(electroName);
         electroName = new String ("Plancha");
         listElectroNames.add(electroName);

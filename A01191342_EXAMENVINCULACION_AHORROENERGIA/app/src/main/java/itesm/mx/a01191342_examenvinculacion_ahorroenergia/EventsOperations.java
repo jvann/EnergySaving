@@ -139,6 +139,6 @@ public class EventsOperations {
     }
 
     public void deleteEvents(){
-//        db.execSQL("delete from " + DataBaseSchema.EventsTable.TABLE_NAME);
+        db.execSQL("delete from " + DataBaseSchema.EventsTable.TABLE_NAME);
     }
 }

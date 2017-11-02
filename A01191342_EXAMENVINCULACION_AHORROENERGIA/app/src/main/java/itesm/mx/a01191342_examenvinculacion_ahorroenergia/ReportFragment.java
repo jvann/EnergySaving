@@ -78,7 +78,6 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
         dao = new EventsOperations(this.getContext());//HERE POSSIBLE PROBLEM.
         dao.open();
 
-
         Log.d(DEBUG_TAG, "onCreateView() has been called.");
 
         btnSearch.setOnClickListener(this);
@@ -100,24 +99,104 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
 
+        cleanTextViews();
         getEventsReport();
         Log.d(DEBUG_TAG, "Report.onClick() has been called.");
     }
 
+    public void cleanTextViews() {
+        tvLicuadora.setText("0");
+        tvEstereo.setText("0");
+        tvCafetera.setText("0");
+        tvRadiograbadora.setText("0");
+        tvLavadora.setText("0");
+        tvHorno.setText("0");
+        tvPlancha.setText("0");
+        tvVentilador.setText("0");
+        tvTelevisor.setText("0");
+        tvRefrigerador.setText("0");
+    }
     public void getEventsReport() {
+
         ArrayList<Event> eventList = dao.getAllEvents();
-        getDatePicker = String.valueOf(datePicker.getYear()) + " " + String.valueOf(datePicker.getMonth()) + " " + String.valueOf(datePicker.getDayOfMonth());
+        getDatePicker = String.valueOf(datePicker.getDayOfMonth()) + "/" + String.valueOf(datePicker.getMonth()) + "/" + String.valueOf(datePicker.getYear());
 
         Log.d(DEBUG_TAG, getDatePicker);
 
         for (int i = 0; i < eventList.size(); i++) {
-            Log.d(DEBUG_TAG, ":" + eventList.get(i).getDate());
 
-//            if ()
+            if (eventList.get(i).getDate().equals(getDatePicker)) {
+                Log.d(DEBUG_TAG, eventList.get(i).getType());
+
+                switch (eventList.get(i).getType())
+                {
+                    case "Licuadora":
+                        tvLicuadora.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvLicuadora.getText().toString()) + eventList.get(i).getUse()*125));
+                        break;
+                    case "Estereo musical":
+                        tvEstereo.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvEstereo.getText().toString()) + eventList.get(i).getUse()*100));
+                        break;
+                    case "Cafetera":
+                        tvCafetera.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvCafetera.getText().toString()) + eventList.get(i).getUse()*895));
+                        break;
+                    case "Radiograbadora":
+                        tvRadiograbadora.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvRadiograbadora.getText().toString()) + eventList.get(i).getUse()*70));
+                        break;
+                    case "Lavadora ropa (automatica)":
+                        tvLavadora.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvLavadora.getText().toString()) + eventList.get(i).getUse()*510));
+                        break;
+                    case "Horno de microondas":
+                        tvHorno.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvHorno.getText().toString()) + eventList.get(i).getUse()*1450));
+                        break;
+                    case "Plancha":
+                        tvPlancha.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvPlancha.getText().toString()) + eventList.get(i).getUse()*1000));
+                        break;
+                    case "Ventilador":
+                        tvVentilador.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvVentilador.getText().toString()) + eventList.get(i).getUse()*85));
+                        break;
+                    case "Televisor color":
+                        tvTelevisor.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvTelevisor.getText().toString()) + eventList.get(i).getUse()*400));
+                        break;
+                    case "Refrigerador":
+                        tvRefrigerador.setText(
+                                String.valueOf(
+                                        Integer.parseInt(
+                                                tvRefrigerador.getText().toString()) + eventList.get(i).getUse()*610));
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
-
-
     }
+
     @Override
     public void onStart() {
         super.onStart();

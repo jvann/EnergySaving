@@ -52,6 +52,7 @@ public class EventsFragment extends Fragment implements AdapterView.OnItemClickL
 
         dao = new EventsOperations(this.getContext());//HERE POSSIBLE PROBLEM.
         dao.open();
+
         refreshView(view);
 
         return view;
