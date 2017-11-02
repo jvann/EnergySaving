@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -98,6 +99,13 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
     @Override
     public void onElectroSelected(int position) {
         Log.d(DEBUG_TAG, "Position Electrodomestic: " + position);
+
+        DetalleElectro detalleElectro = DetalleElectro.newInstance(position);
+
+        FragmentTransaction fragTrans = getSupportFragmentManager().beginTransaction();
+        fragTrans.replace(R.id.container, detalleElectro, "TAG_DETALLE_ELECTRO");
+        fragTrans.addToBackStack("TAG_DETALLE_ELECTRO");
+        fragTrans.commit();
     }
 
     @Override

@@ -303,7 +303,7 @@
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
                 android:paddingTop="2dp"
-                android:text="0"
+                android:text="0 KWH"
                 android:textAlignment="viewStart"
                 android:textSize="18sp"
                 android:textStyle="bold" />

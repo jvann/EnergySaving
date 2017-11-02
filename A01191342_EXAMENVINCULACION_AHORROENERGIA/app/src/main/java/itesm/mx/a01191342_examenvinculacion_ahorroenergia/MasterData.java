@@ -91,4 +91,6 @@ public class MasterData {
     public ArrayList<String> getAllElectroNames () {
         return listElectroNames;
     }
+
+    public Electro getElectro(int index) { return listElectros.get(index); }
 }
