@@ -8,7 +8,7 @@
     tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectroDetalle">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/image_electro_detail"
         android:layout_width="wrap_content"
         android:layout_height="245dp"
         app:srcCompat="@drawable/meditation" />
@@ -18,10 +18,10 @@
         android:layout_height="50dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/text_detail_electro"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="TextView"
+        android:text="Electrodomestico"
         android:textAlignment="center"
         android:textColor="@color/colorTextToolbar"
         android:textSize="30sp"
@@ -32,10 +32,10 @@
         android:layout_height="25dp" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/text_kwh_detail"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="TextView"
+        android:text="KWH"
         android:textAlignment="center"
         android:textColor="@color/colorTextToolbar"
         android:textSize="30sp"
