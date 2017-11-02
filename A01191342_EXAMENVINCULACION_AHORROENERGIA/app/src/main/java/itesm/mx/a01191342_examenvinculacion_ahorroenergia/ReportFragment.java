@@ -92,7 +92,7 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
         super.onActivityCreated(savedInstanceState);
 
         //simple_list_item_activated_1 allows the change of color in the background.
-        // when the item from the lsit is selected(clicked).
+        // when the item from the list is selected(clicked).
 
         Log.d(DEBUG_TAG, "onActivityCreated() has been called.");
     }
@@ -108,10 +108,12 @@ public class ReportFragment extends Fragment implements View.OnClickListener{
         ArrayList<Event> eventList = dao.getAllEvents();
         getDatePicker = String.valueOf(datePicker.getYear()) + " " + String.valueOf(datePicker.getMonth()) + " " + String.valueOf(datePicker.getDayOfMonth());
 
-        Log.d("DATEPICKER", getDatePicker);
+        Log.d(DEBUG_TAG, getDatePicker);
 
         for (int i = 0; i < eventList.size(); i++) {
+            Log.d(DEBUG_TAG, ":" + eventList.get(i).getDate());
 
+//            if ()
         }
 
 

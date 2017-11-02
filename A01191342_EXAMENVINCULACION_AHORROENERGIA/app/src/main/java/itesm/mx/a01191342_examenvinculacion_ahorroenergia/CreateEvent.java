@@ -25,7 +25,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     private ArrayAdapter<String> adapter;
     private EventsOperations dao;
     private Button addButton;
-    private Calendar getDate;
+    private Calendar calendar;
     private Spinner sItems;
     private EditText etUse;
 
@@ -43,8 +43,8 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         addButton = (Button) findViewById(R.id.button_addEvent);
         sItems = (Spinner) findViewById(R.id.spinner);
         etUse = (EditText) findViewById(R.id.edit_horasUso);
-        getDate = Calendar.getInstance();
-        Log.d("DATE", "Current time => " + getDate.getTime());
+        calendar = Calendar.getInstance();
+        Log.d("DATE", "Current time => " + calendar.getTime());
 
         spinnerArray =  MasterData.getInstance().getAllElectroNames();
 
@@ -53,8 +53,15 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sItems.setAdapter(adapter);
 
-        // Now we display formattedDate value in TextView
-        date.setText(String.valueOf(getDate.getTime()));
+        // Now we display formattedDate value in TextView. DateFormat dd/mm/yyyy hh:mm.
+        String sDate =
+                calendar.get(Calendar.DAY_OF_MONTH) + "/" +
+                calendar.get(Calendar.MONTH) + "/" +
+                calendar.get(Calendar.YEAR) + " " +
+                calendar.get(Calendar.HOUR) + ":" +
+                calendar.get(Calendar.MINUTE);
+
+        date.setText(sDate);
         addButton.setOnClickListener(this);
     }
 
