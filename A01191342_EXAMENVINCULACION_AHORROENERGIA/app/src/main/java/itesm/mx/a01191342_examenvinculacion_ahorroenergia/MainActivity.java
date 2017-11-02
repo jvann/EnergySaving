@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
     public void onElectroSelected(int position) {
         Log.d(DEBUG_TAG, "Position Electrodomestic: " + position);
 
-        Intent intent = new Intent(MainActivity.this, ElectroDetalle.class);
+        Intent intent = new Intent(MainActivity.this, ElectroDetail.class);
         intent.putExtra("position", position);
         startActivity(intent);
 

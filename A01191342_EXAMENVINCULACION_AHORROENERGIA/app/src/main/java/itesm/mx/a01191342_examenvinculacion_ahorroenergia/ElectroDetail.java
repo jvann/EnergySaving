@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ElectroDetalle extends AppCompatActivity {
+public class ElectroDetail extends AppCompatActivity {
 
     private ArrayList<Electro> electrosList;
     private ImageView ivPicture;
