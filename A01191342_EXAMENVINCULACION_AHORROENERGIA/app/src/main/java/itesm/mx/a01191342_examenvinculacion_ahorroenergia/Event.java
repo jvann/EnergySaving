@@ -10,6 +10,7 @@ public class Event {
 
     private long id;
     private String date;
+    private String hour;
     private String type;
     private int picture;
     private int use;
@@ -17,21 +18,24 @@ public class Event {
     public Event() {
         this.id = 0;
         this.date = null;
+        this.hour = null;
         this.type = null;
         this.picture = 0;
         this.use = 0;
     }
 
-    public Event (String date, String type, int picture, int use) {
+    public Event (String date, String hour, String type, int picture, int use) {
         this.date = date;
+        this.hour = hour;
         this.type = type;
         this.picture = picture;
         this.use = use;
     }
 
-    public Event (long id, String date, String type, int picture, int use) {
+    public Event (long id, String date, String hour, String type, int picture, int use) {
         this.id = id;
         this.date = date;
+        this.hour = hour;
         this.type = type;
         this.picture = picture;
         this.use = use;
@@ -52,6 +56,10 @@ public class Event {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public String getHour() { return hour; }
+
+    public void setHour(String hour) { this.hour = hour; }
 
     public String getType() {
         return type;

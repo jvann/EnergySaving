@@ -41,6 +41,7 @@ public class EventsOperations {
         try {
             ContentValues values = new ContentValues();
             values.put(DataBaseSchema.EventsTable.COLUMN_DATE, event.getDate());
+            values.put(DataBaseSchema.EventsTable.COLUMN_HOUR, event.getHour());
             values.put(DataBaseSchema.EventsTable.COLUMN_TYPE, event.getType());
             values.put(DataBaseSchema.EventsTable.COLUMN_IMAGE, event.getPicture());
             values.put(DataBaseSchema.EventsTable.COLUMN_USE, event.getUse());
@@ -69,8 +70,9 @@ public class EventsOperations {
                         Integer.parseInt(cursor.getString(0)),
                         cursor.getString(1),
                         cursor.getString(2),
-                        Integer.parseInt(cursor.getString(3)),
-                        Integer.parseInt(cursor.getString(4))
+                        cursor.getString(3),
+                        Integer.parseInt(cursor.getString(4)),
+                        Integer.parseInt(cursor.getString(5))
                 );
             }
             cursor.close();
@@ -120,8 +122,9 @@ public class EventsOperations {
                             Integer.parseInt(cursor.getString(0)),
                             cursor.getString(1),
                             cursor.getString(2),
-                            Integer.parseInt(cursor.getString(3)),
-                            Integer.parseInt(cursor.getString(4))
+                            cursor.getString(3),
+                            Integer.parseInt(cursor.getString(4)),
+                            Integer.parseInt(cursor.getString(5))
                     );
 
                     listEvents.add(event);
@@ -136,6 +139,6 @@ public class EventsOperations {
     }
 
     public void deleteEvents(){
-        db.execSQL("delete from " + DataBaseSchema.EventsTable.TABLE_NAME);
+//        db.execSQL("delete from " + DataBaseSchema.EventsTable.TABLE_NAME);
     }
 }

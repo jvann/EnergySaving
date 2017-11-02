@@ -28,6 +28,8 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     private Calendar calendar;
     private Spinner sItems;
     private EditText etUse;
+    private String sDate;
+    private String sHour;
 
     private String DEBUG_TAG = "CREATE_EVENT";
 
@@ -54,14 +56,15 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         sItems.setAdapter(adapter);
 
         // Now we display formattedDate value in TextView. DateFormat dd/mm/yyyy hh:mm.
-        String sDate =
+        sDate =
                 calendar.get(Calendar.DAY_OF_MONTH) + "/" +
                 calendar.get(Calendar.MONTH) + "/" +
-                calendar.get(Calendar.YEAR) + " " +
-                calendar.get(Calendar.HOUR) + ":" +
+                calendar.get(Calendar.YEAR);
+
+        sHour = calendar.get(Calendar.HOUR) + ":" +
                 calendar.get(Calendar.MINUTE);
 
-        date.setText(sDate);
+        date.setText(sDate + " " + sHour);
         addButton.setOnClickListener(this);
     }
 
@@ -70,7 +73,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
 
 //        if (etUse.getText().equals("")) {
             String sInput = date.getText().toString() + " " +  sItems.getSelectedItem().toString() + " " +  R.drawable.meditation + " " + Integer.parseInt(etUse.getText().toString());
-            Event event = new Event(date.getText().toString(), sItems.getSelectedItem().toString(), R.drawable.meditation, Integer.parseInt(etUse.getText().toString()));
+            Event event = new Event(sDate, sHour, sItems.getSelectedItem().toString(), R.drawable.meditation, Integer.parseInt(etUse.getText().toString()));
             Log.d(DEBUG_TAG, sInput);
             dao.addEvent(event);
             Toast.makeText(this, "Evento agregado exitosamente", Toast.LENGTH_SHORT).show();

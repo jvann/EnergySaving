@@ -25,7 +25,8 @@ public class EventDBHelper extends SQLiteOpenHelper {
                 DataBaseSchema.EventsTable.TABLE_NAME +
                 "(" +
                 DataBaseSchema.EventsTable._ID + " INTEGER PRIMARY KEY, " +
-                DataBaseSchema.EventsTable.COLUMN_DATE + " TEXT," +//Comes from timestamp, needs to be converted at the moment of inserting.
+                DataBaseSchema.EventsTable.COLUMN_DATE + " TEXT," +//Date from calendar.
+                DataBaseSchema.EventsTable.COLUMN_HOUR + " TEXT," +//Hour of event added.
                 DataBaseSchema.EventsTable.COLUMN_TYPE + " TEXT," +
                 DataBaseSchema.EventsTable.COLUMN_IMAGE + " INTEGER," +
                 DataBaseSchema.EventsTable.COLUMN_USE + " INTEGER " +
