@@ -93,6 +93,10 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
     @Override
     public void onEventSelected(int position) {
         Log.d(DEBUG_TAG, "Position Event: " + position);
+
+        Intent intent = new Intent(MainActivity.this, EventDetail.class);
+        intent.putExtra("position", position);
+        startActivity(intent);
     }
 
 

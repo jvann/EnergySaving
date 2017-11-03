@@ -45,9 +45,9 @@ public class MasterData {
         listElectros.add(electro);
         electro = new Electro ("Radiograbadora", 70, R.drawable.meditation);
         listElectros.add(electro);
-        electro = new Electro ("Lavadora ropa (automatica) ", 510, R.drawable.meditation);
+        electro = new Electro ("Lavadora ropa (automatica)", 510, R.drawable.meditation);
         listElectros.add(electro);
-        electro = new Electro ("Horno de microondas ", 1450, R.drawable.meditation);
+        electro = new Electro ("Horno de microondas", 1450, R.drawable.meditation);
         listElectros.add(electro);
         electro = new Electro ("Plancha", 1000, R.drawable.meditation);
         listElectros.add(electro);
@@ -93,4 +93,14 @@ public class MasterData {
     }
 
     public Electro getElectro(int index) { return listElectros.get(index); }
+
+    public int getElectro(String name) {
+
+        for (int i = 0; i < listElectros.size(); i++) {
+            if (listElectros.get(i).getNameE().equals(name)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

@@ -1,9 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.EventDetail">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/image_event_detail"
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        app:srcCompat="@drawable/meditation"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/text_event_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha"
+        android:textAlignment="center" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/text_detail_event"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Electrodomestico"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextToolbar"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/text_event_kwh_detail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="KWH"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextToolbar"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/text_use_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Uso"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/text_total_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextToolbar"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
