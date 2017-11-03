@@ -28,7 +28,7 @@ public class ElectroDetail extends AppCompatActivity implements View.OnTouchList
         ivPicture = (ImageView) findViewById(R.id.image_electro_detail);
         tvNameElectro = (TextView) findViewById(R.id.text_detail_electro);
         tvKwh = (TextView) findViewById(R.id.text_kwh_detail);
-
+        ivPicture.setOnTouchListener(this);
         electrosList = MasterData.getInstance().getAllElectros();
 
         Bundle data = getIntent().getExtras();
@@ -44,20 +44,29 @@ public class ElectroDetail extends AppCompatActivity implements View.OnTouchList
         tvKwh.setText(electrosList.get(position).getWatts() + " KWH");
     }
 
-    @Override
-    public boolean onTouch(View view, MotionEvent event) {
-//        int action = event.getAction();
-//
-//        switch (action)
-//        {
-//            case (MotionEvent.ACTION_CANCEL):
-//                Log.d(DEBUG_TAG, "Action was CANCEL -> x = " + event.getX() + " y = " + event.getY());
-//                return true;
-//            case (MotionEvent.ACTION_UP):
-//                Log.d(DEBUG_TAG, "Action was UP -> x = " + event.getX() + " y = " + event.getY());
-//                return true;
-//        }
-        Log.d(DEBUG_TAG, "onTouch");
-        return true;
-    }
+        @Override
+        public boolean onTouch(View view, MotionEvent event) {
+            int action = event.getAction();
+
+            switch(action) {
+                case (MotionEvent.ACTION_DOWN) :
+                    Log.d(DEBUG_TAG,"Action was DOWN");
+                    return true;
+                case (MotionEvent.ACTION_MOVE) :
+                    Log.d(DEBUG_TAG,"Action was MOVE");
+                    return true;
+                case (MotionEvent.ACTION_UP) :
+                    Log.d(DEBUG_TAG,"Action was UP");
+                    return true;
+                case (MotionEvent.ACTION_CANCEL) :
+                    Log.d(DEBUG_TAG,"Action was CANCEL");
+                    return true;
+                case (MotionEvent.ACTION_OUTSIDE) :
+                    Log.d(DEBUG_TAG,"Movement occurred outside bounds " +
+                            "of current screen element");
+                    return true;
+                default :
+                    return super.onTouchEvent(event);
+            }
+        }
 }

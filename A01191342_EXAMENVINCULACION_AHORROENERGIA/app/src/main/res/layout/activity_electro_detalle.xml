@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/layout_detalle_electro"
     tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.ElectroDetail">
 
     <Space
