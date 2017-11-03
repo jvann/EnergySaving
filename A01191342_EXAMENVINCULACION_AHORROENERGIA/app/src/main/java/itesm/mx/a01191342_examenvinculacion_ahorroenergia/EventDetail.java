@@ -50,7 +50,7 @@ public class EventDetail extends AppCompatActivity {
     }
 
     private void setViewDetail(int position) {
-        ivPicture.setImageResource(eventList.get(position).getPicture());
+        ivPicture.setImageResource(electrosList.get(MasterData.getInstance().getElectro(eventList.get(position).getType())).getPicture());
         tvNameElectro.setText(eventList.get(position).getType());
         tvKwh.setText(electrosList.get(MasterData.getInstance().getElectro(eventList.get(position).getType())).getWatts() + " KWH");
         tvDate.setText(eventList.get(position).getDate() + " " + eventList.get(position).getHour());

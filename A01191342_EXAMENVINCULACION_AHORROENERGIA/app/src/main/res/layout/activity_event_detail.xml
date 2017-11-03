@@ -7,6 +7,10 @@
     android:orientation="vertical"
     tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.EventDetail">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
     <ImageView
         android:id="@+id/image_event_detail"
         android:layout_width="match_parent"
