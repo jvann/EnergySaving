@@ -37,25 +37,25 @@ public class MasterData {
         listElectros = new ArrayList<Electro>();
 
         Electro electro;
-        electro = new Electro ("Licuadora", 125, R.drawable.meditation);
+        electro = new Electro ("Licuadora", 125, R.drawable.blender);
         listElectros.add(electro);
-        electro = new Electro ("Estereo musical", 100, R.drawable.meditation);
+        electro = new Electro ("Estereo musical", 100, R.drawable.stereo);
         listElectros.add(electro);
-        electro = new Electro ("Cafetera", 895, R.drawable.meditation);
+        electro = new Electro ("Cafetera", 895, R.drawable.coffee);
         listElectros.add(electro);
-        electro = new Electro ("Radiograbadora", 70, R.drawable.meditation);
+        electro = new Electro ("Radiograbadora", 70, R.drawable.radio);
         listElectros.add(electro);
-        electro = new Electro ("Lavadora ropa (automatica)", 510, R.drawable.meditation);
+        electro = new Electro ("Lavadora ropa (automatica)", 510, R.drawable.washing);
         listElectros.add(electro);
-        electro = new Electro ("Horno de microondas", 1450, R.drawable.meditation);
+        electro = new Electro ("Horno de microondas", 1450, R.drawable.microwave);
         listElectros.add(electro);
-        electro = new Electro ("Plancha", 1000, R.drawable.meditation);
+        electro = new Electro ("Plancha", 1000, R.drawable.iron);
         listElectros.add(electro);
-        electro = new Electro ("Ventilador", 85, R.drawable.meditation);
+        electro = new Electro ("Ventilador", 85, R.drawable.fan);
         listElectros.add(electro);
-        electro = new Electro ("Televisor color", 400, R.drawable.meditation);
+        electro = new Electro ("Televisor color", 400, R.drawable.television);
         listElectros.add(electro);
-        electro = new Electro ("Refrigerador", 610, R.drawable.meditation);
+        electro = new Electro ("Refrigerador", 610, R.drawable.fridge);
         listElectros.add(electro);
 
         listElectroNames = new ArrayList<String>();

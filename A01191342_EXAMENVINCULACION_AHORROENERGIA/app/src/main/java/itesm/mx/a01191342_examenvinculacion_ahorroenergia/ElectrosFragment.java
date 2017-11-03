@@ -67,7 +67,7 @@ public class ElectrosFragment extends Fragment implements AdapterView.OnItemClic
         super.onActivityCreated(savedInstanceState);
 
         //simple_list_item_activated_1 allows the change of color in the background.
-        // when the item from the lsit is selected(clicked).
+        // when the item from the list is selected(clicked).
 
         Log.d(DEBUG_TAG, "onActivityCreated() has been called.");
     }

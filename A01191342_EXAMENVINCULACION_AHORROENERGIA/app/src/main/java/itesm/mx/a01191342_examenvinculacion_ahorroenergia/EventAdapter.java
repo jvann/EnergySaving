@@ -36,7 +36,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
         Event event = getItem(position);
         tvName.setText(event.getType());
         tvDate.setText(event.getDate());
-        ivImageEvent.setImageResource(event.getPicture());
+        ivImageEvent.setImageResource(MasterData.getInstance().getElectro(MasterData.getInstance().getElectro(event.getType())).getPicture());
 
         return convertView;
     }

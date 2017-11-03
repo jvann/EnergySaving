@@ -8,12 +8,16 @@
     tools:context="itesm.mx.a01191342_examenvinculacion_ahorroenergia.CreateEvent"
     android:weightSum="1">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="125dp"
         android:layout_weight="0.60"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/saveenergy" />
 
     <TextView
         android:id="@+id/text_dateText"

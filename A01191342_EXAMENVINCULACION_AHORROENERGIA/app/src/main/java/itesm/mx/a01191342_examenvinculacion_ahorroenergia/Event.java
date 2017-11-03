@@ -77,9 +77,7 @@ public class Event {
         this.picture = picture;
     }
 
-    public int getUse() {
-        return use;
-    }
+    public int getUse()  { return use; }
 
     public void setUse(int use) {
         this.use = use;
