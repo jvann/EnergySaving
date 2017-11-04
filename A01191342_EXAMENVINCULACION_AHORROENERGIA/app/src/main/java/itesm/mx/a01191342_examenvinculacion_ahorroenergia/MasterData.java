@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class MasterData {
     private static MasterData instance = null;
 
-    private ArrayList<Electro> listElectros;
+    public static ArrayList<Electro> listElectros;
     private ArrayList<String> listElectroNames;
 
     private MasterData() {

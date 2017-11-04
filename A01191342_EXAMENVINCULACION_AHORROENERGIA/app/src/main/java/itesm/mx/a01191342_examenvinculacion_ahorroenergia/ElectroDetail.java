@@ -23,6 +23,8 @@ public class ElectroDetail extends AppCompatActivity implements View.OnTouchList
     private GestureDetectorCompat mDetector;
     private MyGestureListener myGestureListener;
 
+    private int indice;
+
     private static String DEBUG_TAG = "ELECTRO_DETAIL";
 
     @Override
@@ -47,7 +49,7 @@ public class ElectroDetail extends AppCompatActivity implements View.OnTouchList
             setViewDetail(data.getInt("position"));
         }
 
-
+        indice = 0;
 
     }
 
@@ -108,8 +110,29 @@ public class ElectroDetail extends AppCompatActivity implements View.OnTouchList
             return false;
         }
         @Override
-        public boolean onFling(MotionEvent e, MotionEvent e2, float velocityX, float velocityY) {
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             Log.d(DEBUG_TAG, "onFling");
+            if (e1.getX() > e2.getX()) {
+                Log.d(DEBUG_TAG, "onFling RIGHT");
+                if (indice >= 9) {
+                    indice = 0;
+                } else {
+                    indice = indice + 1;
+                }
+
+                setViewDetail(indice);
+            }
+            if (e1.getX() < e2.getX()) {
+                Log.d(DEBUG_TAG, "onFling LEFT");
+
+                if (indice <= 0) {
+                    indice = 9;
+                } else {
+                    indice = indice - 1;
+                }
+
+                setViewDetail(indice);
+            }
             return false;
         }
         @Override
